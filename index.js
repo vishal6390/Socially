@@ -19,8 +19,6 @@ const saveChatMessageRoute = require('./routes/SaveChatMessage')
 const getAllChatsRoute = require('./routes/GetAllChats')
 const deletePost = require('./routes/DeletePost')
 
-
-
 const app = express()
 const cors = require('cors');
 // const path = require('path');
@@ -30,13 +28,14 @@ app.use(express.urlencoded())
 app.use(cors())
 dotenv.config()
 
-const PORT = process.env.PORT || 9002
+const PORT =  9002
+const MONGO_URL = "mongodb+srv://va420007:420007@cluster0.yxzse2y.mongodb.net/?retryWrites=true&w=majority"
 
 app.listen(PORT, () => {
     console.log("Backend running")
 })
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
