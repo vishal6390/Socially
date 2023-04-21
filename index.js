@@ -23,7 +23,7 @@ const deletePost = require('./routes/DeletePost')
 
 const app = express()
 const cors = require('cors');
-const path = require('path');
+// const path = require('path');
 
 app.use(express.json())
 app.use(express.urlencoded())
@@ -45,18 +45,19 @@ mongoose.connect(process.env.MONGO_URL, {
 
 // --------------------------deployment------------------------------
 
-if (process.env.NODE_ENV === "production") {
+// if (process.env.NODE_ENV === "production") {
   const path = require('path')
     
   app.get("/", (req, res) =>{
     app.use(express.static(path.resolve(__dirname, "frontend", "build")))
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
   });
-} else {
-  app.get("/", (req, res) => {
-    res.send("API is running..");
-  });
-}
+// }
+//  else {
+//   app.get("/", (req, res) => {
+//     res.send("API is running..");
+//   });
+// }
 
 // --------------------------deployment------------------------------
 
