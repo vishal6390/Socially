@@ -42,7 +42,7 @@ export const HomePage = () => {
                     postPic: data.url
                   }
           
-                   axios.post("http://localhost:9002/api/createPost", obj)
+                   axios.post("/api/createPost", obj)
                   .then(res => {
                     window.location.reload()
                     // toast.success(res.data.message)

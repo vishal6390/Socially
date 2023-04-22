@@ -18,7 +18,7 @@ const SinglePost = ({post}) => {
         postId: post._id
       }
       // console.log(post._id)
-      axios.post("http://localhost:9002/api/deletePost", obj)
+      axios.post("/api/deletePost", obj)
       .then(res => {
         history.push('/')
         toast.success(res.data.message)

@@ -36,7 +36,7 @@ const RegisterPage = () => {
                 const obj = {
                     username, email, password, reEnterPassword, age, dob, profilePic: data.url
                 }
-                axios.post("http://localhost:9002/api/register", obj)
+                axios.post("/api/register", obj)
                 .then((res) => {
                     toast.success(res.data.message)
                     setLoading(false)

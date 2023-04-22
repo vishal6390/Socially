@@ -12,7 +12,7 @@ const Posts = ({isProfile}) => {
     const fetchPosts = async () => {
       const id = JSON.parse(window.localStorage.getItem('Socially_Current_User'))._id
       const obj = {id: id}
-      const tempArray = await axios.post("http://localhost:9002/api/getAllPosts", obj)
+      const tempArray = await axios.post("/api/getAllPosts", obj)
       setPostsArray(tempArray.data.postsArray)
       setMyPostsArray(tempArray.data.myPostsArray)
     }

@@ -28,7 +28,7 @@ export const Navbar = () => {
             const obj = {
                 searchQuery
             }
-            await axios.post("http://localhost:9002/api/getFilteredData", obj)
+            await axios.post("/api/getFilteredData", obj)
             .then(res => {
                 setSearchResult(res.data.res_user)
                 setLoading(false)
@@ -51,7 +51,7 @@ export const Navbar = () => {
             friend_id: requestedUserId
         }
 
-        axios.post("http://localhost:9002/api/connectUpdate", obj)
+        axios.post("/api/connectUpdate", obj)
         .then(res => {
             toast.success(res.data.message)
         })

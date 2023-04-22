@@ -22,7 +22,7 @@ const Leftbar = () => {
         const id = JSON.parse(window.localStorage.getItem('Socially_Current_User'))._id
         const obj = {id: id}
         // console.log("scscsc", curr_user._id)
-        const requestUserArray = await axios.post("http://localhost:9002/api/getRequestUser", obj)
+        const requestUserArray = await axios.post("/api/getRequestUser", obj)
         console.log(requestUserArray.data.requestUsers)
         setRequestArray(requestUserArray.data.requestUsers)
       }
@@ -34,7 +34,7 @@ const Leftbar = () => {
       const getFriends = async () => {
         const id = JSON.parse(window.localStorage.getItem('Socially_Current_User'))._id
         const obj = {id: id}
-        const getFriendsArray = await axios.post("http://localhost:9002/api/getFriends", obj)
+        const getFriendsArray = await axios.post("/api/getFriends", obj)
         setFriendsArray(getFriendsArray.data.friends)
       }
       getFriends()
@@ -53,19 +53,19 @@ const Leftbar = () => {
         requestUserId: requestUser._id
       }
 
-      await axios.post("http://localhost:9002/api/friendArrayUpdate/currentUserUpdate/1", obj)
+      await axios.post("/api/friendArrayUpdate/currentUserUpdate/1", obj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
       // console.log('1')
 
-      await axios.post("http://localhost:9002/api/friendArrayUpdate/currentUserUpdate/2", obj)
+      await axios.post("/api/friendArrayUpdate/currentUserUpdate/2", obj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
       // console.log('2')
 
-      await axios.post("http://localhost:9002/api/friendArrayUpdate/requestUserUpdate", obj)
+      await axios.post("/api/friendArrayUpdate/requestUserUpdate", obj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
 
