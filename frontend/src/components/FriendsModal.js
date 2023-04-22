@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Button, Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalHeader, ModalFooter, ModalBody, useDisclosure} from '@chakra-ui/react';
 
 const FriendsModal = () => {
