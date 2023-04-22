@@ -17,7 +17,7 @@ const LoginPage = () => {
 
     const handleLogin = () => {
         const user = {email, password}
-        axios.post("http://localhost:9002/api/login", user)
+        axios.post("/api/login", user)
         .then(res => {
             toast.success(res.data.message)
             window.localStorage.setItem('Socially_Current_User', JSON.stringify(res.data.user))
