@@ -17,6 +17,14 @@ router.post("/", async (req, res) => {
         allPosts = [...allPosts, ...OneFriendPostArray]
     }
 
+    allPosts.sort((a, b) => {
+        return a.current_time - b.current_time
+    })
+
+    myPostsArray.sort((a, b) => {
+        return a.current_time - b.current_time
+    })
+
     res.send({message: "request users fetched success", postsArray: allPosts, myPostsArray: myPostsArray})
 
 })

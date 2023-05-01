@@ -29,13 +29,12 @@ app.use(cors())
 dotenv.config()
 
 const PORT =  9002
-const MONGO_URL = "mongodb+srv://va420007:420007@cluster0.yxzse2y.mongodb.net/?retryWrites=true&w=majority"
 
 app.listen(PORT, () => {
     console.log("Backend running")
 })
 
-mongoose.connect(MONGO_URL, {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
